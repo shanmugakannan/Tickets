@@ -1,0 +1,73 @@
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+.ticket-container{
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  align-content: center;
+  padding: 1em;
+}
+.ticket {
+  text-align: center;
+  background-color: whitesmoke;
+  min-height: 100px;
+  margin: 2%;
+  padding: 1em;
+}
+
+.datedetail {
+  margin-bottom: 1em;
+  padding-top: 1em;
+  min-height: 25px;
+  float:left;
+}
+
+.urldetail {
+  display: block;
+  float: left;
+  width: 32%;
+  margin-left: 2em;
+  float:left;
+  overflow-wrap: break-word;
+}
+
+.ticketstatusdetail {
+  float: left;
+  display: block;
+  margin-left: 1em;
+  margin-right: 1.2em;
+  float:left;
+}
+
+
+.urlheader, .urltxt {
+  display: block;
+  font-size: 15px;
+  color: #888;
+}
+
+.urltxt {
+  font-weight: 700;
+  padding-bottom: 11px;
+  padding-top: 32px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.year {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.day {
+  font-weight: 700;
+  margin-bottom: 1em;
+}

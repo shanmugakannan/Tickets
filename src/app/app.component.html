@@ -1,0 +1,23 @@
+<main>
+  <div class = "ticket-container">
+      <div class="ticket" *ngFor ="let ticket of tickets">
+          <div class ="datedetail">
+            <span class="date">16</span>
+            <span class="year">January 2016</span>
+            <span class="day">Saturday</span>
+          </div>
+        <div class="urldetail">
+          <span class="header">Vanity URL</span>
+          <span class="urltxt">{{ticket.vanityurl}}</span>
+        </div>
+          <div class="urldetail">
+            <span class="header">Target URL</span>
+            <span class="urltxt">{{ticket.targeturl}}</span>
+          </div>
+          <div class="ticketstatusdetail">
+            <span class="tripstatus">Completed</span>
+            <span class="tripid">{{ticket.id}}</span>
+          </div>
+      </div>
+   </div>
+</main>
