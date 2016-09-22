@@ -1,6 +1,6 @@
 <main>
   <div class = "ticket-container">
-      <div class="ticket" *ngFor ="let ticket of tickets">
+      <div class="ticket" *ngFor ="let ticket of tickets;let idx = index">
           <div class ="datedetail">
             <span class="date">16</span>
             <span class="year">January 2016</span>
@@ -8,16 +8,17 @@
           </div>
         <div class="urldetail">
           <span class="header">Vanity URL</span>
-          <span class="urltxt">{{ticket.vanityurl}}</span>
+          <span class="txt">{{ticket.vanityurl}}</span>
         </div>
           <div class="urldetail">
             <span class="header">Target URL</span>
-            <span class="urltxt">{{ticket.targeturl}}</span>
+            <span class="txt">{{ticket.targeturl}}</span>
           </div>
           <div class="ticketstatusdetail">
-            <span class="tripstatus">Completed</span>
-            <span class="tripid">{{ticket.id}}</span>
+            <span class="header">Created By</span>
+            <span class="txt">{{ticket.executor}}</span>
           </div>
+          <div><command (click)="OnProcessTicket(idx)"></command></div>
       </div>
    </div>
 </main>

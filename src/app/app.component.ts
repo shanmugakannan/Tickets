@@ -8,6 +8,7 @@ import '../../public/css/styles.css';
 })
 
 export class AppComponent {
+
     tickets: Ticket[] = [
         {"id":183458,
         "targeturl":"paypal.com",
@@ -46,6 +47,12 @@ export class AppComponent {
             "executor":"naseetharaman"
         }
     ]
+
+    OnProcessTicket(index:number)
+    {
+        console.log(index);
+        this.tickets.splice(index,1);
+    }
 }
 
 export class Ticket{
