@@ -1,4 +1,5 @@
 <main>
+  <div><inputform></inputform></div>
   <div class = "ticket-container">
       <div class="ticket" *ngFor ="let ticket of tickets;let idx = index">
           <div class ="datedetail">
@@ -8,17 +9,17 @@
           </div>
         <div class="urldetail">
           <span class="header">Vanity URL</span>
-          <span class="txt">{{ticket.vanityurl}}</span>
+          <span class="txt">{{ticket.ID}}</span>
         </div>
           <div class="urldetail">
             <span class="header">Target URL</span>
-            <span class="txt">{{ticket.targeturl}}</span>
+            <span class="txt">{{ticket.TargetUrl}}</span>
           </div>
           <div class="ticketstatusdetail">
             <span class="header">Created By</span>
-            <span class="txt">{{ticket.executor}}</span>
+            <span class="txt">{{ticket.Executor}}</span>
           </div>
-          <div><command (click)="OnProcessTicket(idx)"></command></div>
+          <div><command (click)="OnProcessTicket($event.target)"></command></div>
       </div>
    </div>
 </main>

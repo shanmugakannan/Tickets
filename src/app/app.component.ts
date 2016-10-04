@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
+import {Ticket} from './ticket';
+import {TicketService} from '../services/ticket.service';
 
 @Component({
   selector: 'my-app',
@@ -9,58 +11,18 @@ import '../../public/css/styles.css';
 
 export class AppComponent {
 
-    tickets: Ticket[] = [
-        {"id":183458,
-        "targeturl":"paypal.com",
-        "vanityurl":"vanity.com",
-        "executor":"snatarajapillai"
-         },
-        {"id":232522,
-         "targeturl":"paypalcorp.com",
-         "vanityurl":"mytool.com/sdfsdf/sdf/sdf/qwewqe/234234324324324232432432/dsfsfdsfasfa/12343q4q43q",
-         "executor":"miklu"
-         },
+    constructor(private ticketservice:TicketService) {
+        this.ticketservice.getTickets()
+            .subscribe(res => this.tickets = res.json())
+    }
+    tickets:Ticket[];
 
-        {"id":542522,
-            "targeturl":"paypalcorp.com",
-            "vanityurl":"rams.mytool.com",
-            "executor":"naseetharaman"
-        },
-        {"id":542522,
-            "targeturl":"paypalcorp.com",
-            "vanityurl":"rams.mytool.com",
-            "executor":"naseetharaman"
-        },
-        {"id":272522,
-            "targeturl":"corp.com",
-            "vanityurl":"mytool.bridge.com",
-            "executor":"mfrank"
-        },
-        {"id":542522,
-            "targeturl":"paypalcorp.com",
-            "vanityurl":"rams.mytool.com",
-            "executor":"naseetharaman"
-        },
-        {"id":642522,
-            "targeturl":"paypalcorp.com",
-            "vanityurl":"mytool.com",
-            "executor":"naseetharaman"
-        }
-    ]
-
-    OnProcessTicket(index:number)
+    OnProcessTicket(result:string)
     {
-        console.log(index);
-        this.tickets.splice(index,1);
+        console.log(result);
     }
 }
 
-export class Ticket{
-    id: number;
-    targeturl: string;
-    vanityurl :string;
-    executor:string;
-}
 
 
 
